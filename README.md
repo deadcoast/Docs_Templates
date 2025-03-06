@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Create the Venv for python
+1. Create the venv for python
 ```sh
 python -m .venv venv
 ```
