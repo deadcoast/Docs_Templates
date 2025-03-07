@@ -1,0 +1,197 @@
+# CURSORRULES
+
+## Workflow & Instructions
+1. **Context First**: Always check `System_Directory_Tree.md` and relevant `SRF` before generating code. If you cannot find context still, provide a grep or command search on the `CodeBase_Context.md` file for relevant implementations.
+2. **Architecture Alignment**: Ensure all implementations align with specifications in `SRF` Documents. If you still cannot find proper context or current implementations, **ask the user** before generating a new implementation.
+3. **Incremental Implementation**: Generate code in manageable steps, maintaining consistency with existing codebase.
+4. **Knowledge Management**: Document reusable components, fixes, and implementation decisions in the appropriate `SRF`.
+
+5. **Rule of Seven (`RO7`)**:
+   1. Review `Scratchpad` for current task and plan implementation steps
+   2. Search `SRF` for existing implementations; adjust plan accordingly
+   3. Take action to complete the task
+   4. Review for missing implementations required by recent changes
+   5. Identify implementation gaps and plan necessary steps
+   6. Update Cursor System documents `Cursor_System_Architecture.md` and `Cursor_System_Integration` to maintain codebase consistency
+   7. Update the `Scratchpad`, with progress
+
+
+6. **`Scratchpad` Usage**: Maintain a task list in this file following this format:
+   ```
+   ## Scratchpad
+   
+   [X] Task 1
+   [ ] Task 2
+   ```
+   
+## `System Reference Files` (`SRF`)
+- **`Cursor System Documents`**: *Optimized Document Format for AI*
+  - `CodeBase_Docs/Cursor_System_Architecture.md` - Phased restructuring plan with implementation priorities
+  - `CodeBase_Docs/Cursor_System_Integration.md` - Current state architecture reference
+- **`CodeBase Context Documents`**: *Context Documents on prior Code Implementation*
+  - `CodeBase_Docs/System_Directory_Tree.md` - An outline of the entire CodeBase for contextual awareness
+  - `CodeBase_Docs/System_Development_History.md` - Comprehensive Documentation on the History of Development on each section of the code base.
+
+>Update progress markers as subtasks are completed. Use the Scratchpad to maintain implementation context and track progress.
+
+---
+
+# Scratchpad
+
+## Phase 1: Frontend-Backend Integration Progress
+
+### 7. Next Steps: UI Component Registration
+
+[ ] Create a component registration system for dynamic UI updates
+[ ] Implement a UI component registry service
+[ ] Add automatic event subscription for registered components
+[ ] Create a component lifecycle management system
+[ ] Add performance monitoring for UI component updates
+
+### Phase 2: Foundation and Analysis
+
+- [ ] **Resource System Analysis**
+
+  - [ ] Run TypeScript type check on resource modules
+  - [ ] Document current ResourceFlowManager implementation
+  - [ ] Compare implementation against architecture diagram
+  - [ ] Identify type inconsistencies in resource system
+  - [ ] Create standardized type definitions for resources
+
+- [ ] **Event System Enhancement**
+
+  - [ ] Audit current event implementation across codebase
+  - [ ] Document event subscription patterns in UI components
+  - [ ] Analyze event emission in manager services
+  - [ ] Create standardized event type definitions
+  - [ ] Design subscription cleanup mechanism
+
+- [ ] **Context Provider Standardization**
+  - [ ] Document current context implementations
+  - [ ] Analyze context-manager connections
+  - [ ] Create template for standardized context providers
+  - [ ] Implement standardized GameContext as proof of concept
+  - [ ] Test context re-rendering behavior
+
+### Phase 2: Core System Implementation
+
+- [ ] **Manager Service Standardization**
+
+  - [ ] Define standard manager interface template
+  - [ ] Implement service registry for dependency management
+  - [ ] Document manager initialization requirements
+  - [ ] Refactor ResourceManager to follow standard pattern
+  - [ ] Refactor ModuleManager to follow standard pattern
+  - [ ] Create tests for manager initialization order
+
+- [ ] **UI Component Connection**
+
+  - [ ] Audit UI component usage of contexts
+  - [ ] Create standardized hooks for context access
+  - [ ] Implement event subscription utilities for components
+  - [ ] Update ResourceVisualization component as proof of concept
+  - [ ] Test UI update behavior with backend changes
+
+- [ ] **Game Loop Integration**
+  - [ ] Document current update mechanisms
+  - [ ] Design centralized game loop architecture
+  - [ ] Implement update priority system
+  - [ ] Connect ResourceFlowManager optimization to game loop
+  - [ ] Implement performance monitoring for update cycles
+  - [ ] Test game loop with multiple systems
+
+### Phase 3: Module-by-Module Integration
+
+- [ ] **Resource Module Integration**
+
+  - [ ] Update resource UI components to use standard patterns
+  - [ ] Implement event subscriptions for resource changes
+  - [ ] Connect ResourceVisualization to ThresholdContext
+  - [ ] Implement resource alert system
+  - [ ] Create integration tests for resource system
+  - [ ] Document resource module integration pattern
+
+- [ ] **Module System Integration**
+
+  - [ ] Update module UI components to use standard patterns
+  - [ ] Implement event subscriptions for module changes
+  - [ ] Connect ModuleStatusDisplay to ModuleManager
+  - [ ] Implement module upgrade visualization
+  - [ ] Create integration tests for module system
+  - [ ] Document module system integration pattern
+
+- [ ] **Exploration System Integration**
+  - [ ] Update exploration UI components to use standard patterns
+  - [ ] Implement event subscriptions for exploration changes
+  - [ ] Connect DataAnalysisSystem to ExplorationManager
+  - [ ] Implement discovery classification visualization
+  - [ ] Create integration tests for exploration system
+  - [ ] Document exploration system integration pattern
+
+### Phase 4: Performance Optimization and Quality Assurance
+
+- [ ] **Performance Optimization**
+
+  - [ ] Implement performance monitoring for critical paths
+  - [ ] Profile resource flow optimization
+  - [ ] Optimize rendering for complex UI components
+  - [ ] Implement efficient state update batching
+  - [ ] Create performance benchmarks
+  - [ ] Document performance best practices
+
+- [ ] **Testing and Quality Assurance**
+  - [ ] Expand unit test coverage for core systems
+  - [ ] Implement integration tests for system boundaries
+  - [ ] Create simulation tests for resource flow
+  - [ ] Implement automated architectural validation
+  - [ ] Set up continuous monitoring of code quality metrics
+  - [ ] Document testing approach for new development
+
+## Remaining Integration Priorities
+
+- [ ] Implement proper event propagation for all system events
+- [ ] Add comprehensive error handling for system integration
+- [ ] Ensure all UI components register for relevant events
+- [ ] Create consistent state update patterns throughout the application
+
+## Missing Connections
+
+- [ ] **Frontend/Backend Disconnect**: The UI components are not properly updating when backend state changes
+- [ ] **Context Update Failures**: Contexts are not always re-rendering components when state changes
+- [ ] **Event Broadcasting**: Event buses are not properly connected to UI components
+- [ ] **Resource Flow**: Resource changes are not triggering UI updates reliably
+- [ ] **State Synchronization**: Multiple sources of truth causing consistency problems
+
+## Implementation Notes
+
+1. **Resource Management**
+
+   - ResourceManager now exposes resource rates to UI through ResourceRatesContext
+   - Implemented proper threshold monitoring through ThresholdIntegration
+   - Added visual indicators for resource status in GameStateMonitor
+
+2. **Module Management**
+
+   - ModuleManager needs better event broadcasting
+   - UI components now listen for module state changes through SystemIntegration
+   - Need to implement proper module activation/deactivation UI
+
+3. **Event System**
+
+   - Created EventPropagationService for centralized event mapping and transformation
+   - Implemented useModuleEvents and useGlobalSystemEvents hooks for UI components
+   - Added ResourceEventMonitor as an example of proper event subscription
+   - Integrated with existing moduleEventBus and global event system
+
+4. **Error Handling**
+
+   - Implemented IntegrationErrorHandler as a React error boundary
+   - Added error recovery mechanisms with progressive backoff
+   - Integrated with ErrorLoggingService for structured error logging
+   - Added fallback UI for error states
+
+5. **UI Components**
+   - Many UI components are now properly connected to backend state
+   - Added error handling for integration components
+   - Created hooks for simplified event registration
+   - Need to implement component registration system
