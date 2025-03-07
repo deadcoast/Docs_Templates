@@ -2,11 +2,11 @@
 
 ## PROPERLY UTILIZING THE ARCHITECTURE DOCUMENTATION
 
-This file documents the current state of the Galactic Sprawl system architecture. It serves as a comprehensive reference for all system components, their relationships, and implementation status. When analyzing the codebase, I will refer to this document to understand the intended architecture, identify gaps between the current implementation and the architectural vision, and determine what connections need to be established or fixed. This document represents the "source of truth" for system architecture decisions and should inform all implementation work.
+This file documents the current state of the Galactic Sprawl system architecture. It serves as a comprehensive reference for all system components, their relationships, and implementation status. When analyzing the codebase, refer to this document to understand the intended architecture, identify gaps between the current implementation and the architectural vision, and determine what connections need to be established or fixed. This document represents the "source of truth" for system architecture decisions and should inform all implementation work.
 
 ## USAGE INSTRUCTIONS FOR IMPLEMENTATION
 
-When working with this architectural documentation, I will:
+When working with this architectural documentation:
 
 1. Reference specific components using their unique identifiers to ensure precise communication about system elements
 2. Parse all JSON objects and TypeScript interfaces as structured specifications that define the intended implementation
@@ -17,7 +17,7 @@ When working with this architectural documentation, I will:
 
 ## IMPLEMENTATION APPROACH
 
-When suggesting implementations based on this document, I will:
+When suggesting implementations based on this document:
 
 1. First identify the component and its connections in the architecture specification
 2. Reference the implementation status to understand what needs to be built or modified
